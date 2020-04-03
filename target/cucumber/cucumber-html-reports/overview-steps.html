@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>No Name (add projectName to cucumber-reporting.properties)</td>
+      <td>03 Apr 2020, 01:00</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">helper.HookHelper.setUp()</td>
+              <td>20</td>
+              <td class="duration" data-value="13344143355">13.344</td>
+              <td class="duration" data-value="13344143355">15.824</td>
+              <td class="duration" data-value="266882867100">4:26.882</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">helper.HookHelper.tearDown(io.cucumber.java.Scenario)</td>
+              <td>20</td>
+              <td class="duration" data-value="749776450">0.749</td>
+              <td class="duration" data-value="749776450">1.057</td>
+              <td class="duration" data-value="14995529000">14.995</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.AddToShoppingBagSteps.theUserClicksButtonToAddTheProductToTheBag()</td>
+              <td>1</td>
+              <td class="duration" data-value="87764500">0.087</td>
+              <td class="duration" data-value="87764500">0.087</td>
+              <td class="duration" data-value="87764500">0.087</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.AddToShoppingBagSteps.theUserGoesToShoppingBagToDeleteTheProductFromItAndMessageIsDisplayed(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3281631700">3.281</td>
+              <td class="duration" data-value="3281631700">3.281</td>
+              <td class="duration" data-value="3281631700">3.281</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.AddToShoppingBagSteps.theUserIsInAProductPage()</td>
+              <td>1</td>
+              <td class="duration" data-value="387937900">0.387</td>
+              <td class="duration" data-value="387937900">0.387</td>
+              <td class="duration" data-value="387937900">0.387</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.AddToShoppingBagSteps.theUserSearchesForInSearchBarAndSelectsFirstMatch(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="3995969400">3.995</td>
+              <td class="duration" data-value="3995969400">4.703</td>
+              <td class="duration" data-value="7991938800">7.991</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.AddToShoppingBagSteps.theWebPageDisplaysPopUpMessageToUserWithTheConfirmation()</td>
+              <td>1</td>
+              <td class="duration" data-value="1082671600">1.082</td>
+              <td class="duration" data-value="1082671600">1.082</td>
+              <td class="duration" data-value="1082671600">1.082</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.DeleteFromShoppingBagSteps.addsTheProductToTheShoppingBagAndClosesPopUp()</td>
+              <td>1</td>
+              <td class="duration" data-value="431035500">0.431</td>
+              <td class="duration" data-value="431035500">0.431</td>
+              <td class="duration" data-value="431035500">0.431</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.DeleteFromShoppingBagSteps.theUserAddedAProductAndClicksOnGoToShoppingBagButton()</td>
+              <td>1</td>
+              <td class="duration" data-value="3052903500">3.052</td>
+              <td class="duration" data-value="3052903500">3.052</td>
+              <td class="duration" data-value="3052903500">3.052</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.DeleteFromShoppingBagSteps.theUserClicksToDeleteTheProductFromTheShoppingBag()</td>
+              <td>1</td>
+              <td class="duration" data-value="624355900">0.624</td>
+              <td class="duration" data-value="624355900">0.624</td>
+              <td class="duration" data-value="624355900">0.624</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.DeleteFromShoppingBagSteps.theWebPageDisplaysMessageToUserSayingTheBagIsEmpty(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="563152500">0.563</td>
+              <td class="duration" data-value="563152500">0.563</td>
+              <td class="duration" data-value="563152500">0.563</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.FilterSteps.thePageShowsErrorWithWrongPriceRange()</td>
+              <td>1</td>
+              <td class="duration" data-value="53855300">0.053</td>
+              <td class="duration" data-value="53855300">0.053</td>
+              <td class="duration" data-value="53855300">0.053</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.FilterSteps.theUserCannotClickADisabledApplyFilterButton()</td>
+              <td>1</td>
+              <td class="duration" data-value="88863600">0.088</td>
+              <td class="duration" data-value="88863600">0.088</td>
+              <td class="duration" data-value="88863600">0.088</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.FilterSteps.theUserClicksPriceButton()</td>
+              <td>5</td>
+              <td class="duration" data-value="247122760">0.247</td>
+              <td class="duration" data-value="247122760">0.749</td>
+              <td class="duration" data-value="1235613800">1.235</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.FilterSteps.theUserIsInCremaProductPage()</td>
+              <td>5</td>
+              <td class="duration" data-value="399360">0.000</td>
+              <td class="duration" data-value="399360">0.000</td>
+              <td class="duration" data-value="1996800">0.001</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.FilterSteps.theUserSearchesForInSearchBar(java.lang.String)</td>
+              <td>5</td>
+              <td class="duration" data-value="3402054480">3.402</td>
+              <td class="duration" data-value="3402054480">5.525</td>
+              <td class="duration" data-value="17010272400">17.010</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.FilterSteps.theUserShouldOnlySeeProductsWithPricesInTheInputRange()</td>
+              <td>3</td>
+              <td class="duration" data-value="1113912300">1.113</td>
+              <td class="duration" data-value="1113912300">1.470</td>
+              <td class="duration" data-value="3341736900">3.341</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.FilterSteps.typesPricesBetweenToInPriceFieldsAndAppliesThePriceFilter(java.lang.String,java.lang.String)</td>
+              <td>5</td>
+              <td class="duration" data-value="1224151560">1.224</td>
+              <td class="duration" data-value="1224151560">1.954</td>
+              <td class="duration" data-value="6120757800">6.120</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.GeneralSteps.theUserClosesTheSession()</td>
+              <td>3</td>
+              <td class="duration" data-value="3267499933">3.267</td>
+              <td class="duration" data-value="3267499933">3.908</td>
+              <td class="duration" data-value="9802499800">9.802</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.GeneralSteps.theUserLogsInFalabellaSWebPage(io.cucumber.datatable.DataTable)</td>
+              <td>3</td>
+              <td class="duration" data-value="3751105633">3.751</td>
+              <td class="duration" data-value="3751105633">4.305</td>
+              <td class="duration" data-value="11253316900">11.253</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginSteps.clicksLoginButton()</td>
+              <td>5</td>
+              <td class="duration" data-value="71015160">0.071</td>
+              <td class="duration" data-value="71015160">0.086</td>
+              <td class="duration" data-value="355075800">0.355</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginSteps.thePageShowsErrorWithBlankEmailField()</td>
+              <td>1</td>
+              <td class="duration" data-value="40891200">0.040</td>
+              <td class="duration" data-value="40891200">0.040</td>
+              <td class="duration" data-value="40891200">0.040</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginSteps.thePageShowsErrorWithEmailPasswordToTheUser()</td>
+              <td>3</td>
+              <td class="duration" data-value="2409047366">2.409</td>
+              <td class="duration" data-value="2409047366">3.104</td>
+              <td class="duration" data-value="7227142100">7.227</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginSteps.thePageShowsErrorWithWrongPasswordFormat()</td>
+              <td>1</td>
+              <td class="duration" data-value="63828500">0.063</td>
+              <td class="duration" data-value="63828500">0.063</td>
+              <td class="duration" data-value="63828500">0.063</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginSteps.theUserOpensLoginFormOverlayFromFalabellaSHomePage()</td>
+              <td>8</td>
+              <td class="duration" data-value="375459512">0.375</td>
+              <td class="duration" data-value="375459512">0.872</td>
+              <td class="duration" data-value="3003676100">3.003</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginSteps.theUserShouldBeSignedIn()</td>
+              <td>1</td>
+              <td class="duration" data-value="2077796600">2.077</td>
+              <td class="duration" data-value="2077796600">2.077</td>
+              <td class="duration" data-value="2077796600">2.077</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginSteps.theUserTypesInItsCredentialsForUsernameAndPassword(io.cucumber.datatable.DataTable)</td>
+              <td>8</td>
+              <td class="duration" data-value="626803350">0.626</td>
+              <td class="duration" data-value="626803350">1.039</td>
+              <td class="duration" data-value="5014426800">5.014</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LoginSteps.userCannotClickDisabledLoginButton()</td>
+              <td>4</td>
+              <td class="duration" data-value="16206100">0.016</td>
+              <td class="duration" data-value="16206100">0.017</td>
+              <td class="duration" data-value="64824400">0.064</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LogoutSteps.clicksLogoutOption()</td>
+              <td>1</td>
+              <td class="duration" data-value="116707100">0.116</td>
+              <td class="duration" data-value="116707100">0.116</td>
+              <td class="duration" data-value="116707100">0.116</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LogoutSteps.theUserHoverOnAccountDiv()</td>
+              <td>1</td>
+              <td class="duration" data-value="121767300">0.121</td>
+              <td class="duration" data-value="121767300">0.121</td>
+              <td class="duration" data-value="121767300">0.121</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LogoutSteps.theUserIsCurrentlyLoggedInFalabellaSHomePage()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.LogoutSteps.theUserShouldBeSignedOut()</td>
+              <td>1</td>
+              <td class="duration" data-value="2816566500">2.816</td>
+              <td class="duration" data-value="2816566500">2.816</td>
+              <td class="duration" data-value="2816566500">2.816</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.RegistrationSteps.nameAndLastNamesDoesNotHaveAnyNumber()</td>
+              <td>1</td>
+              <td class="duration" data-value="33909000">0.033</td>
+              <td class="duration" data-value="33909000">0.033</td>
+              <td class="duration" data-value="33909000">0.033</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.RegistrationSteps.theUserFillsAllWithCorrespondingExceptingCellphone(io.cucumber.datatable.DataTable)</td>
+              <td>3</td>
+              <td class="duration" data-value="2212020000">2.212</td>
+              <td class="duration" data-value="2212020000">2.369</td>
+              <td class="duration" data-value="6636060000">6.636</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.RegistrationSteps.theUserGoesToTheRegistrationPageFromFalabellaSHomePage()</td>
+              <td>3</td>
+              <td class="duration" data-value="7600470233">7.600</td>
+              <td class="duration" data-value="7600470233">8.118</td>
+              <td class="duration" data-value="22801410700">22.801</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.RegistrationSteps.triesToSaveItsData()</td>
+              <td>3</td>
+              <td class="duration" data-value="63938666">0.063</td>
+              <td class="duration" data-value="63938666">0.077</td>
+              <td class="duration" data-value="191816000">0.191</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.RegistrationSteps.webPageDisplaysErrorMessageForNotMatchingPasswordsAndEmptyCellphoneFieldToTheUser()</td>
+              <td>1</td>
+              <td class="duration" data-value="74798400">0.074</td>
+              <td class="duration" data-value="74798400">0.074</td>
+              <td class="duration" data-value="74798400">0.074</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.RegistrationSteps.webPageDisplaysErrorMessageToTheUserWithEmptyCellphoneField()</td>
+              <td>2</td>
+              <td class="duration" data-value="42384600">0.042</td>
+              <td class="duration" data-value="42384600">0.047</td>
+              <td class="duration" data-value="84769200">0.084</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.SearchSteps.theUserIsInFalabellaSHomePage()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.SearchSteps.theUserShouldBeRedirectedToResultingMatchesPage(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="91755800">0.091</td>
+              <td class="duration" data-value="91755800">0.091</td>
+              <td class="duration" data-value="91755800">0.091</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">steps.SearchSteps.theUserTypesInTheSearchBarAndPressEnter(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1282159700">1.282</td>
+              <td class="duration" data-value="1282159700">1.282</td>
+              <td class="duration" data-value="1282159700">1.282</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>41</td>
+            <td>132</td>
+            <td class="duration">3.033</td>
+            <td class="duration">4:26.882</td>
+            <td class="duration">6:40.390</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

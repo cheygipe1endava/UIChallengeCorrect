@@ -1,0 +1,16 @@
+steps\FilterSteps.class
+steps\GeneralSteps.class
+pages\BasePage.class
+steps\LoginSteps.class
+helper\RegisterHelper.class
+pages\ProductPage.class
+helper\HookHelper.class
+pages\HomePage.class
+steps\AddToShoppingBagSteps.class
+steps\SearchSteps.class
+steps\LogoutSteps.class
+pages\ShoppingBagPage.class
+steps\RegistrationSteps.class
+pages\RegistrationPage.class
+runner\TestRunner.class
+steps\DeleteFromShoppingBagSteps.class
