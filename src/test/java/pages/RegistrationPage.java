@@ -148,20 +148,6 @@ public class RegistrationPage extends BasePage{
         return emptyField;
     }
 
-    public boolean verifyNumbersInNameAndLastNames()
-    {
-        boolean verifyNumsInNameAndLastName = false;
-        String nameText = webDriver.findElement(user).getAttribute("value");
-        String fatherLastNameText = webDriver.findElement(fatherLastName).getAttribute("value");
-        String motherLastNameText = webDriver.findElement(motherLastName).getAttribute("value");
-        if(nameText.matches(".*\\d.*") || fatherLastNameText.matches(".*\\d.*")
-                || motherLastNameText.matches(".*\\d.*"))
-        {
-            verifyNumsInNameAndLastName = true;
-        }
-        return verifyNumsInNameAndLastName;
-    }
-
     public boolean registrationCellphoneNotFound()
     {
         return warningFieldsDisplayed(emptyCellphoneMessage);

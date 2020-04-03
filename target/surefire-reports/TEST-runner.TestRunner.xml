@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="20" failures="0" name="runner.TestRunner" time="400.719" errors="0" skipped="0">
+<testsuite tests="20" failures="0" name="runner.TestRunner" time="417.989" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="13.0.2+8"/>
@@ -60,24 +60,24 @@
     <property name="sun.stdout.encoding" value="cp850"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="Add to shopping cart" name="The user needs to add a product to the shopping bag" time="31.334"/>
-  <testcase classname="Delete from the shopping cart" name="The user needs to delete a product from the shopping bag" time="31.05"/>
-  <testcase classname="Filter" name="The user needs to filter by object price" time="20.554"/>
-  <testcase classname="Filter" name="The user cannot filter by object price with a lower final price" time="18.445"/>
-  <testcase classname="Filter" name="The user cannot filter by object price with empty price fields" time="22.471"/>
-  <testcase classname="Filter" name="The user can filter by object price with only initial price" time="18.95"/>
-  <testcase classname="Filter" name="The user can filter by object price with only final price" time="19.054"/>
-  <testcase classname="Login" name="The user unsuccessfully signs in Falabella&apos;s web page with both wrong credentials" time="19.22"/>
-  <testcase classname="Login" name="The user unsuccessfully signs in Falabella&apos;s web page with wrong password" time="17.69"/>
-  <testcase classname="Login" name="The user unsuccessfully signs in Falabella&apos;s web page with wrong email" time="17.41"/>
-  <testcase classname="Login" name="The user unsuccessfully signs in Falabella&apos;s web page with blank fields" time="13.85"/>
-  <testcase classname="Login" name="The user unsuccessfully signs in Falabella&apos;s web page with email as blank field" time="14.714"/>
-  <testcase classname="Login" name="The user unsuccessfully signs in Falabella&apos;s web page with password as blank field" time="14.352"/>
-  <testcase classname="Login" name="The user unsuccessfully signs in Falabella&apos;s web page with password not meeting the required eight characters format" time="17.469"/>
-  <testcase classname="Login" name="The user successfully signs in Falabella&apos;s web page" time="19.23"/>
-  <testcase classname="Logout" name="The user successfully signs out of Falabella&apos;s web page" time="20.213"/>
-  <testcase classname="Registration" name="The user unsuccessfully register in Falabella&apos;s web page" time="23.761"/>
-  <testcase classname="Registration" name="The user unsuccessfully register in Falabella&apos;s web page with numbers in name and last names fields" time="22.633"/>
-  <testcase classname="Registration" name="The user unsuccessfully register in Falabella&apos;s web page with no matching passwords" time="23.124"/>
-  <testcase classname="Search" name="The user searches for &quot;cremas&quot; in Falabella&apos;s web page" time="15.195"/>
+  <testcase classname="Add to shopping cart" name="The user needs to add a product to the shopping bag" time="34.538"/>
+  <testcase classname="Delete from the shopping cart" name="The user needs to delete a product from the shopping bag" time="32.021"/>
+  <testcase classname="Filter" name="The user needs to filter by object price" time="21.751"/>
+  <testcase classname="Filter" name="The user cannot filter by object price with a lower final price" time="21.785"/>
+  <testcase classname="Filter" name="The user cannot filter by object price with empty price fields" time="21.122"/>
+  <testcase classname="Filter" name="The user can filter by object price with only initial price" time="19.694"/>
+  <testcase classname="Filter" name="The user can filter by object price with only final price" time="20.796"/>
+  <testcase classname="Login" name="The user unsuccessfully signs in Falabella&apos;s web page with both wrong credentials" time="18.14"/>
+  <testcase classname="Login" name="The user unsuccessfully signs in Falabella&apos;s web page with wrong password" time="20.964"/>
+  <testcase classname="Login" name="The user unsuccessfully signs in Falabella&apos;s web page with wrong email" time="16.698"/>
+  <testcase classname="Login" name="The user unsuccessfully signs in Falabella&apos;s web page with blank fields" time="14.269"/>
+  <testcase classname="Login" name="The user unsuccessfully signs in Falabella&apos;s web page with email as blank field" time="16.021"/>
+  <testcase classname="Login" name="The user unsuccessfully signs in Falabella&apos;s web page with password as blank field" time="16.623"/>
+  <testcase classname="Login" name="The user unsuccessfully signs in Falabella&apos;s web page with password not meeting the required eight characters format" time="17.65"/>
+  <testcase classname="Login" name="The user successfully signs in Falabella&apos;s web page" time="23.092"/>
+  <testcase classname="Logout" name="The user successfully signs out of Falabella&apos;s web page" time="20.066"/>
+  <testcase classname="Registration" name="The user unsuccessfully register in Falabella&apos;s web page" time="22.654"/>
+  <testcase classname="Registration" name="The user unsuccessfully register in Falabella&apos;s web page with numbers in name and last names fields" time="22.269"/>
+  <testcase classname="Registration" name="The user unsuccessfully register in Falabella&apos;s web page with no matching passwords" time="21.742"/>
+  <testcase classname="Search" name="The user searches for &quot;cremas&quot; in Falabella&apos;s web page" time="16.094"/>
 </testsuite>

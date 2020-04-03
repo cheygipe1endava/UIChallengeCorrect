@@ -82,14 +82,14 @@ public class HomePage extends BasePage{
         return checkEnabledLoginButton;
     }
 
-    public boolean emptyEmailWarning()
+    public void emptyEmailWarning()
     {
-        return waitAndValidateWarningMessageEmailAndPassword(emptyEmailWarning);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(emptyEmailWarning));
     }
 
-    public boolean wrongPasswordFormat()
+    public void wrongPasswordFormat()
     {
-        return waitAndValidateWarningMessageEmailAndPassword(wrongPasswordFormatWarning);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(wrongPasswordFormatWarning));
     }
 
     public boolean invalidLogin()

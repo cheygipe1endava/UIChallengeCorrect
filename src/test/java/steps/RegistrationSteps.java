@@ -50,15 +50,7 @@ public class RegistrationSteps{
     @Then("^web page displays error message for not matching passwords and empty cellphone field to the user$")
     public void webPageDisplaysErrorMessageForNotMatchingPasswordsAndEmptyCellphoneFieldToTheUser()
     {
-        Assert.assertTrue("Error: Cellphone field is filled",
-                registrationPage.registrationCellphoneNotFound());
-        Assert.assertTrue("Error: Password fields do match",
-                registrationPage.notMatchingPasswordsMessage());
-    }
-
-    @And("^name and last names does not have any number$")
-    public void nameAndLastNamesDoesNotHaveAnyNumber()
-    {
-        registrationPage.verifyNumbersInNameAndLastNames();
+        Assert.assertTrue("Error: Cellphone field is filled", registrationPage.registrationCellphoneNotFound());
+        Assert.assertTrue("Error: Password fields do match", registrationPage.notMatchingPasswordsMessage());
     }
 }

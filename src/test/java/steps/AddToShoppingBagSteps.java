@@ -11,7 +11,6 @@ import pages.HomePage;
 import pages.ProductPage;
 import pages.ShoppingBagPage;
 
-
 public class AddToShoppingBagSteps {
 
     private WebDriver webDriver;

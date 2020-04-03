@@ -11,7 +11,6 @@ import java.util.List;
 public class ProductPage extends BasePage
 {
     private boolean verifyProductPageRedirection = false;
-    private String firstMatchText, objectNameText;
     private WebDriver webDriver;
     private WebDriverWait wait;
     private List<WebElement> productResults;
@@ -21,15 +20,12 @@ public class ProductPage extends BasePage
     private By minPrice = By.id("testId-range-from");
     private By maxPrice = By.id("testId-range-to");
     private By appliedFiltersField = By.id("testId-SelectedFilters-container");
-    private By sellingBrand = By.xpath("//*[@data-brand]");
-    private By objectName = By.xpath("//*[@data-name]");
     private By disabledApplyFilterButton = By.xpath("//*[@class='jsx-3084763500' and @disabled]");
     private By productPageLoad = By.xpath("//*[@class='jsx-1987097504 main']");
     private By wrongPriceRangeWarning = By.xpath("//*[@id='testId--desktop-container']//child::p[contains(text(),'Ingresa un rango de precios')]");
     private By productResultList = By.xpath("//*[@id='testId-searchResults-products']//child::div");
     private By addToCartButton = By.xpath("//*[@id='buttonForCustomers']//button");
     private By popUpAddedToCart = By.xpath("//*[@class='doc-click-overlay']//child::span[contains(text(),' Producto(s) agregado(s)')]");
-    private By confirmProductAdded = By.xpath("//*[@class='jsx-351245194 item-info']");
     private By goToShoppingBagButton = By.xpath("//*[@id='linkButton']//parent::div");
     private By shoppingCart = By.xpath("//*[@id='testId-userActions-basket']//i[@data-count]");
 
@@ -49,7 +45,7 @@ public class ProductPage extends BasePage
     {
         wait.until(ExpectedConditions.visibilityOfElementLocated(productsCatalog));
         productResults = webDriver.findElements(productResultList);
-        firstMatchText = productResults.get(0).getText().toLowerCase();
+        String firstMatchText = productResults.get(0).getText().toLowerCase();
         if(firstMatchText.contains(searchProduct))
         {
             verifyProductPageRedirection = true;
@@ -98,17 +94,9 @@ public class ProductPage extends BasePage
         if(verifyProductPageRedirection) {productResults.get(0).click();}
     }
 
-    public boolean confirmFirstMatchPage()
+    public void confirmFirstMatchPage()
     {
-        boolean verifyInsideTheProductPage = false;
         wait.until(ExpectedConditions.visibilityOfElementLocated(productPageLoad));
-        String sellingBrandText = webDriver.findElement(sellingBrand).getText().toLowerCase();
-        objectNameText = webDriver.findElement(objectName).getText().toLowerCase();
-        if(firstMatchText.contains(sellingBrandText) && firstMatchText.contains(objectNameText))
-        {
-            verifyInsideTheProductPage = true;
-        }
-        return verifyInsideTheProductPage;
     }
 
     public void clickAddToCartButton()
@@ -121,9 +109,8 @@ public class ProductPage extends BasePage
     {
         boolean verifyProductAddedToCart = false;
         wait.until(ExpectedConditions.visibilityOfElementLocated(popUpAddedToCart));
-        String confirmProductAddedText = webDriver.findElement(confirmProductAdded).getText().toLowerCase();
         String shoppingCartIcon = webDriver.findElement(shoppingCart).getAttribute("data-count");
-        if(confirmProductAddedText.contains(objectNameText) && !shoppingCartIcon.equals("0"))
+        if(!shoppingCartIcon.equals("0"))
         {
             verifyProductAddedToCart = true;
         }

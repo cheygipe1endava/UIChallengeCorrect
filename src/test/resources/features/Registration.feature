@@ -37,7 +37,6 @@ Feature: Registration
       | cellphone       |                      |
     And tries to save its data
     Then web page displays error message to the user with empty cellphone field
-    And name and last names does not have any number
 
   Scenario: The user unsuccessfully register in Falabella's web page with no matching passwords
     Given the user goes to the registration page from Falabella's home page

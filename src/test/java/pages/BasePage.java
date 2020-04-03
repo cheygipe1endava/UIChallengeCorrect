@@ -38,17 +38,6 @@ public class BasePage {
         return verifyStatus;
     }
 
-    public boolean waitAndValidateWarningMessageEmailAndPassword(By by)
-    {
-        verifyStatus = false;
-        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-        if(webDriver.findElement(by).isDisplayed())
-        {
-            verifyStatus = true;
-        }
-        return verifyStatus;
-    }
-
     public boolean priceFilterVerification(By by)
     {
         verifyStatus = false;
